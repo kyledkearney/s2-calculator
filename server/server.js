@@ -9,7 +9,7 @@ var corsOptions = {
   origin: "http://localhost:3000"
 };
 
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+// app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 
 app.use(cors(corsOptions));
@@ -36,12 +36,11 @@ db.sequelize.sync({ force: true }).then(() => {
 // routes
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
-require('./routes/blog_routes/post.routes')(app);
-require('./routes/external.routes')(app);
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+// });
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

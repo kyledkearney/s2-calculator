@@ -27,11 +27,6 @@ db.sequelize = sequelize;
 
 db.user = require("../models/user.model.js")(sequelize, Sequelize);
 db.role = require("../models/role.model.js")(sequelize, Sequelize);
-db.post = require("../models/blog_models/post.model")(sequelize, Sequelize);
-
-// Gives the post a user owner.
-
-db.post.belongsTo(db.user)
 
 db.user.hasMany(db.post, {foreignKey: "userId"})
 
