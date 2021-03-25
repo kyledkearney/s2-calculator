@@ -1,16 +1,13 @@
 const db = require("../models");
 const User = db.user;
-const Asset = db.asset;
-const Liability = db.liability;
 const FinancingCategory = db.financingCategory;
 const FinancingOption = db.financingOption;
 const Product = db.product;
 const RecurringCost = db.recurringCost;
-const ProductCategory = db.productCategory;
 const Record = db.record;
 
 const Op = db.Sequelize.Op;
 
-exports.createRecord = (req, res) => {};
+// V2 have it update the users assets and liabilities
 
-exports.getRecord = (req, res) => {};
+exports.createFinancingOption = (req, res) => {};
